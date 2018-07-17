@@ -25,6 +25,7 @@ setup(
     url='',
     license='',
     install_requires=requirements(),
+    entry_points={'console_scripts': ['keepcli = Main.__main__:main']},
     author='gopinathlangote',
     classifiers=[
         "License :: OSI Approved :: MIT License",
