@@ -1,6 +1,6 @@
 from pykeepass import PyKeePass
 import argparse
-import Keepass
+import KeePass
 
 W = '\033[0m'  # white (normal)
 R = '\033[31m'  # red
@@ -22,7 +22,7 @@ def main():
 
     searchTerm = args.search.split(" ")
 
-    Keepass.search(kp, searchTerm)
+    KeePass.search(kp, searchTerm)
 
 
 if __name__ == '__main__': main()

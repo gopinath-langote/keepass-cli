@@ -20,13 +20,13 @@ def requirements():
 
 
 setup(
-    name='keepass',
-    version='1.0',
+    name='KeePass',
     url='',
     license='',
     install_requires=requirements(),
     entry_points={'console_scripts': ['keepcli = Main.__main__:main']},
     author='gopinathlangote',
+    packages=['KeePass'],
     classifiers=[
         "License :: OSI Approved :: MIT License",
         "Topic :: Utilities",
