@@ -1,6 +1,8 @@
 from tabulate import tabulate
 from itertools import permutations
 import re
+from pykeepass import PyKeePass
+import argparse
 
 W = '\033[0m'  # white (normal)
 R = '\033[31m'  # red
@@ -58,6 +60,24 @@ def regex(keywords):
 def format(color, str):
     if str is not None:
         return color + str + W
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-f", "--file", action="store", dest="file", required=True, help="Keepass file location")
+    parser.add_argument("-p", "--password", action="store", dest="password", required=True,
+                        help="Keepass file password")
+    parser.add_argument("-s", "--search", action="store", dest="search", required=True, help="Search Key")
+    args = parser.parse_args()
+
+    kp = PyKeePass(args.file, password=args.password)
+
+    searchTerm = args.search.split(" ")
+
+    search(kp, searchTerm)
+
+
+if __name__ == '__main__': main()
 
 # credits
 # https://bitbucket.org/astanin/python-tabulate

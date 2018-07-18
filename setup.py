@@ -20,13 +20,13 @@ def requirements():
 
 
 setup(
-    name='KeePass',
+    name='keepass',
     url='',
     license='',
     install_requires=requirements(),
-    entry_points={'console_scripts': ['keepcli = Main.__main__:main']},
+    entry_points={'console_scripts': ['keepcli = KeePass.__main__:main']},
     author='gopinathlangote',
-    packages=['KeePass'],
+    packages=['keepass'],
     include_package_data=True,
     author_email='',
     description=''
